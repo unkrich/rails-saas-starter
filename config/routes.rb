@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   resource :subscription
-
+  resource :card
+  
 end
