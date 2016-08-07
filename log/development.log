@@ -3060,3 +3060,278 @@ Processing by Devise::RegistrationsController#edit as HTML
 Completed 200 OK in 180ms (Views: 161.9ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for ::1 at 2016-08-07 03:17:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (39.2ms)
+Completed 200 OK in 945ms (Views: 924.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-07 03:17:32 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mCharge Load (0.2ms)[0m  [1m[34mSELECT "charges".* FROM "charges" WHERE "charges"."user_id" = ?[0m  [["user_id", 13]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (142.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 219ms (Views: 215.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-07 03:17:33 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Qs8iY8q+6iwWkJk12bg0Kxo1qVCwEuQHYdH4smo0Y0MoMez6yZoo/tx4QrnOTBLvjFQcdqTPb2paqkbEUHtDag=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 03:17:33 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.erb (8.8ms)
+Completed 200 OK in 86ms (Views: 82.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 14:15:54 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 249ms (Views: 239.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:15:57 -0400
+Processing by SubscriptionsController#new as HTML
+Redirected to http://localhost:3000/users/sign_up
+Filter chain halted as :redirect_to_signup rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-07 14:15:57 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+Completed 200 OK in 121ms (Views: 89.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-07 14:16:11 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cZCMODRqoUhXGCE3dafnDB6GMRZwaKvpxvJQuPcWVs0B1kla7f4cjJJ806i10hEed61BaOiSK6V/YjAavXhj7A==", "user"=>{"email"=>"some@rhtiig.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "some@rhtiig.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "some@rhtiig.com"], ["encrypted_password", "$2a$11$NOKwXZj7uSN.CZPG83qkh.UJGvkbguhsz9j7Z3xmIyS5wibvm9G96"], ["created_at", 2016-08-07 18:16:11 UTC], ["updated_at", 2016-08-07 18:16:11 UTC]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 18:16:11 UTC], ["last_sign_in_at", 2016-08-07 18:16:11 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["updated_at", 2016-08-07 18:16:11 UTC], ["id", 14]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/subscription/new
+Completed 302 Found in 296ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:16:11 -0400
+Processing by SubscriptionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering subscriptions/new.html.erb within layouts/application
+  Rendered subscriptions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+Completed 200 OK in 81ms (Views: 73.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:16:32 -0400
+Processing by SubscriptionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering subscriptions/new.html.erb within layouts/application
+  Rendered subscriptions/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/kevin/Git_Projects/rails-saas-starter/app/views/subscriptions/new.html.erb:3: syntax error, unexpected '.', expecting keyword_end
+.plan-container
+ ^
+/Users/kevin/Git_Projects/rails-saas-starter/app/views/subscriptions/new.html.erb:4: unknown type of %string
+/Users/kevin/Git_Projects/rails-saas-starter/app/views/subscriptions/new.html.erb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/subscriptions/new.html.erb:3: syntax error, unexpected '.', expecting keyword_end
+app/views/subscriptions/new.html.erb:4: unknown type of %string
+app/views/subscriptions/new.html.erb:4: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kevin/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.3ms)
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:31:19 -0400
+Processing by SubscriptionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering subscriptions/new.html.erb within layouts/application
+  Rendered subscriptions/new.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 250ms (Views: 221.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:37:56 -0400
+Processing by SubscriptionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering subscriptions/new.html.erb within layouts/application
+  Rendered subscriptions/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 171ms (Views: 162.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 14:37:58 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 82ms (Views: 73.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 14:37:59 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 83ms (Views: 80.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-07 14:38:03 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mCharge Load (2.1ms)[0m  [1m[34mSELECT "charges".* FROM "charges" WHERE "charges"."user_id" = ?[0m  [["user_id", 14]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (34.6ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+Completed 200 OK in 99ms (Views: 92.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-07 14:38:20 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mCharge Load (0.1ms)[0m  [1m[34mSELECT "charges".* FROM "charges" WHERE "charges"."user_id" = ?[0m  [["user_id", 14]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 68ms (Views: 64.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-07 14:38:24 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+3JD/YcCyK5B7DbxHB5OYNC+sip/g1DPEEDoZDQd5mz5FQZeVZ3Nhf2Jp8NR41xf9n73rRQMgr6Yxf4/FbvwnQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 14:38:24 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 53ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:38:26 -0400
+Processing by SubscriptionsController#new as HTML
+Redirected to http://localhost:3000/users/sign_up
+Filter chain halted as :redirect_to_signup rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-07 14:38:26 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-07 14:38:30 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-07 14:38:30 -0400
+Started POST "/users" for ::1 at 2016-08-07 14:38:47 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p9kpVJuSwA/h4ODnji15O8ovbiP0kttojJa5N85CRMy8q6ik34HO5vsD51p8SqiFkCu9PXogA1yHfOwBY6p1AA==", "user"=>{"email"=>"something@inin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "something@inin.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "something@inin.com"], ["encrypted_password", "$2a$11$uafEOMHkTdZObIKSzlBBqeMtdhB92Gv6iIK/scfSFyobhJtXmROMm"], ["created_at", 2016-08-07 18:38:47 UTC], ["updated_at", 2016-08-07 18:38:47 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 18:38:47 UTC], ["last_sign_in_at", 2016-08-07 18:38:47 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["updated_at", 2016-08-07 18:38:47 UTC], ["id", 15]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/subscription/new
+Completed 302 Found in 187ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 14:38:47 -0400
+Processing by SubscriptionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering subscriptions/new.html.erb within layouts/application
+  Rendered subscriptions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/subscription" for ::1 at 2016-08-07 14:38:50 -0400
+Processing by SubscriptionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JddtudkjEwyU9+tVdOu0rh0AgsRr3HF5wswLFp09H+M+pexJnTAd5Y4U7OiGjGUQRwRR2uVuqU3JJl4gMNUuLw==", "stripeToken"=>"tok_18fwAhFadjBS7NzvQujyGpxO", "card_last4"=>"4242", "card_exp_month"=>"12", "card_exp_year"=>"2020", "card_brand"=>"Visa"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "stripe_id" = ?, "stripe_subscription_id" = ?, "card_last4" = ?, "card_exp_month" = ?, "card_exp_year" = ?, "card_type" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["stripe_id", "cus_8xruIyidfsgLwq"], ["stripe_subscription_id", "sub_8xruACHrXgMqIV"], ["card_last4", "4242"], ["card_exp_month", 12], ["card_exp_year", 2020], ["card_type", "Visa"], ["updated_at", 2016-08-07 18:38:52 UTC], ["id", 15]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1763ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 14:38:52 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (4.6ms)
+Completed 200 OK in 62ms (Views: 59.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-07 14:38:53 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mCharge Load (0.1ms)[0m  [1m[34mSELECT "charges".* FROM "charges" WHERE "charges"."user_id" = ?[0m  [["user_id", 15]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 92ms (Views: 88.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-07 14:39:00 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mCharge Load (0.1ms)[0m  [1m[34mSELECT "charges".* FROM "charges" WHERE "charges"."user_id" = ?[0m  [["user_id", 15]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 104ms (Views: 98.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 14:39:02 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 117ms (Views: 114.1ms | ActiveRecord: 0.2ms)
+
+

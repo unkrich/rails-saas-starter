@@ -46,6 +46,11 @@ class SubscriptionsController < ApplicationController
     redirect_to root_path, notice: "Your subscription has been canceled."
   end
 
+  def plans
+    @stripe_list = Stripe::Plan.all
+    @plans = @stripe_list[:data]
+  end
+
   private
 
     def redirect_to_signup
