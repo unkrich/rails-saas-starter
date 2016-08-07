@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsStarterSaas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Starter SaaS" %></title>
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Starter SaaS" %>">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= tag :meta, name: "stripe-key", content: Rails.application.secrets.stripe_publishable_key %>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   </head>
 
   <body>
-    <%= yield %>
+
+   <%= render 'layouts/navigation' %>
+
+   <%= yield %>
+
   </body>
 </html>

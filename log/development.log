@@ -1,0 +1,87 @@
+Started GET "/" for ::1 at 2016-08-07 00:25:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (34.7ms)
+Completed 200 OK in 4085ms (Views: 4054.6ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-07 00:25:18 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dgy6alSjQEwXAmWKP7L72S7zi1xQlKowU7J6wfhqykZwbvXsb/AbB2Pu+7iP918Z6fjo6rD6UIh3TlqX2QQROQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 53ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 00:25:18 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (4.4ms)
+Completed 200 OK in 61ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 00:25:19 -0400
+Processing by SubscriptionsController#new as HTML
+Redirected to http://localhost:3000/users/sign_up
+Filter chain halted as :redirect_to_signup rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-07 00:25:19 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (56.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 98ms (Views: 96.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-07 00:25:26 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S61R9gMyG38dMz0Lcnc6UNDl/hVU/mGntUV/wqIEHD+06Imyu1fa3k1PnLv43i3SvwKr7Cgvtx+VNRHXDAl6hg==", "user"=>{"email"=>"someemail@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "someemail@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "someemail@gmail.com"], ["encrypted_password", "$2a$11$zH3Sy.Qeu5Njx5OZGHMdXe7lRYfCGLegJkE3f/6gwvok2Dk/FExX."], ["created_at", 2016-08-07 04:25:26 UTC], ["updated_at", 2016-08-07 04:25:26 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 04:25:26 UTC], ["last_sign_in_at", 2016-08-07 04:25:26 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["updated_at", 2016-08-07 04:25:26 UTC], ["id", 8]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/subscription/new
+Completed 302 Found in 256ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/subscription/new" for ::1 at 2016-08-07 00:25:26 -0400
+Processing by SubscriptionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering subscriptions/new.html.erb within layouts/application
+  Rendered subscriptions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/subscription" for ::1 at 2016-08-07 00:25:29 -0400
+Processing by SubscriptionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/he+O66AQmNgWYDTZ8PCQI3t5PmNr58G3FexfZ/l9yXnVdgzT3BCe+9ZHNyHjNwjmd3SRtKjybqhFb6HGCUN6A==", "stripeToken"=>"tok_18fiqrFadjBS7NzvES8MmOtH", "card_last4"=>"4242", "card_exp_month"=>"12", "card_exp_year"=>"2020", "card_brand"=>"Visa"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "stripe_id" = ?, "stripe_subscription_id" = ?, "card_last4" = ?, "card_exp_month" = ?, "card_exp_year" = ?, "card_type" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["stripe_id", "cus_8xe9xpjsgsbjat"], ["stripe_subscription_id", "sub_8xe93ttOB10wR6"], ["card_last4", "4242"], ["card_exp_month", 12], ["card_exp_year", 2020], ["card_type", "Visa"], ["updated_at", 2016-08-07 04:25:30 UTC], ["id", 8]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1575ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 00:25:30 -0400
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 47ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
