@@ -12,6 +12,8 @@ class User < ApplicationRecord
       end
   end
 
+  has_many :charges
+
   def subscribed?
     stripe_subscription_id?
   end

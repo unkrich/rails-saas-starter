@@ -41,6 +41,7 @@ gem 'omniauth-twitter'
 
 #Stripe
 gem 'stripe'
+gem 'stripe_event'
 
 # Fix jquery problems with turbolinks
 gem 'jquery-turbolinks'
