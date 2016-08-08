@@ -79,13 +79,5 @@
       <% end %>
     </div>
 
-    <div class='col-sm-6'>
-      <h4>Your Previous Charges</h4>
-      <% current_user.charges.each do |charge| %>
-        <div>You were charged <%= charge.amount %>.</div>
-        <div><%= charge.card_type %> **** **** **** <%= charge.card_last4 %></div>
-        <div>Expires <%= charge.card_exp_month %> / <%= charge.card_exp_year %></div>
-      <% end %>
-    </div>
   </div>
 </div>
