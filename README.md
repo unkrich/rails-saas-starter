@@ -46,6 +46,8 @@ Then go into config/initializers/devise.rb and change "your_url.com" to your URL
 In order to handle subscriptions and payments you are going to have to sign up for a Stripe account and add your API key to the application. In order to do so you are going to have set the environment variables for production in the same way as above for the variables stripe_publishable_key and stripe_secret_key .
 The test secret/publishable keys for stripe can be set in config/secrets.yml
 
+Set the plan id that you would like users to be signed up for in the subscriptions controller.
+
 By default your Stripe url for webhooks is set to http://your_url.com/stripe/webhooks
 
 See config/initializers/stripe.rb to see an example webhook and edit other settings.
@@ -54,6 +56,9 @@ See config/initializers/stripe.rb to see an example webhook and edit other setti
 
 * Configuration
 
+A good solution for setting environment variables in Heroku is to use 'heroku config:set GITHUB_USERNAME=joesmith'
+see fore more information: https://devcenter.heroku.com/articles/config-vars
+
 * Database creation
 
 * Database initialization
@@ -61,6 +66,10 @@ See config/initializers/stripe.rb to see an example webhook and edit other setti
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
+
+
+To add SSL to a heroku site use the following link / Cloudflare:
+https://support.cloudflare.com/hc/en-us/articles/205893698-Configure-CloudFlare-and-Heroku-over-HTTPS
 
 
 * ...

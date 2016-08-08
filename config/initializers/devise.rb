@@ -273,5 +273,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"], callback_url: "http://your_url.com/users/auth/facebook/callback"
-  config.omniauth :twitter, ENV["TWITTER_APP_ID"], ENV["TWITTER_APP_SECRET"], callback_url: "http://your_url.com/users/auth/twitter/callback"
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], callback_url: "http://your_url.com/users/auth/google_oauth2/callback"
 end
