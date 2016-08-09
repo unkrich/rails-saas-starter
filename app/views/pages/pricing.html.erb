@@ -1,0 +1,9 @@
+<%= form_tag subscription_path(1), :method => :put do %>
+<% @plans.each do |plan| %>
+  <div class=”plan”>
+  <h1><%= plan[:name] %></h1>
+  <p>£<%= plan[:amount]/100 %></p>
+
+  </div>
+<% end %>
+<% end %>
