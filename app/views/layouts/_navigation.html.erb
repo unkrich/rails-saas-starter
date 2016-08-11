@@ -25,7 +25,7 @@
           </li>
         <% else %>
           <li>
-            <%= link_to('Sign Up', new_subscription_path) %>
+            <%= link_to 'Sign Up', new_user_registration_path(:plan => 'free') %>
           </li>
           <li>
             <%= link_to('Login', new_user_session_path)  %>  

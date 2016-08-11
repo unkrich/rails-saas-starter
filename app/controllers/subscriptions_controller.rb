@@ -17,7 +17,7 @@ class SubscriptionsController < ApplicationController
 
     subscription = customer.subscriptions.create(
       source: params[:stripeToken],
-      plan: "monthly"
+      plan: current_user.planid
     )
 
     options = {

@@ -22,6 +22,8 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
+    <%= f.hidden_field :planid, value: params[:plan] %>
+
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>

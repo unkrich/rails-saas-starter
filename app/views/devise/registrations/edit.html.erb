@@ -30,8 +30,15 @@
           <%= f.password_field :current_password, autocomplete: "off" %>
         </div>
 
+        <% if !current_user.subscribed? %>
+
+        <%= link_to('Upgrade', new_subscription_path, class: "btn btn-primary")  %>  
+
+        <% end %>
+        <br><br>
+
         <div class="actions">
-          <%= f.submit "Update" %>
+          <%= f.submit "Update", class: "btn btn-primary" %>
         </div>
       <% end %>
 
