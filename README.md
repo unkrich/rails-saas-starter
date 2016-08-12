@@ -1,6 +1,6 @@
 # README
 
-## Synopsis
+# Synopsis
 
 This project exists because the pre-existing solutions such as rails-stripe-membership-saas and more for building a SaaS application simply didn't fit my needs.
 
@@ -16,13 +16,13 @@ This project is ongoing and may not have all of the above features.
 
 For instructions on how to setup and use the code as a starter project, see installation below. Note that there are some dependencies that may make this project unsuitable for your uses and there are a lot of different ways to go about setting up this project that I will not be covering.
 
-## Installation
+# Installation
 
 Provide code examples and explanations of how to get the project.
 
 After cloning the repository to your computer start by running 'bundle install' and 'rails db:migrate'
 
-# Setting up Devise & OmniAuth
+## Setting up Devise & OmniAuth
 
 Devise should work on its own out of the box, but if you would like to use social sign-ups you are going to have to set the environment variables and create apps within the developer sections of Facebook and Google.
 
@@ -53,7 +53,7 @@ Then go into config/initializers/devise.rb and change "your_url.com" to your URL
 
 Add the callback URL in these files to your Google and Facebook applications. Google is somewhat picky about http/https options, so it is safer to add both and configure based on any errors shown.
 
-# Setting Stripe Subscriptions
+## Setting Stripe Subscriptions
 
 Similarly to the above, sign up for a Stripe account and retrieve your API keys.
 
@@ -65,12 +65,12 @@ By default your Stripe url for webhooks is set to http://your_url.com/stripe/web
 
 Make sure to create plans in the Stripe dashboard and note their id's as you are going to have to pass them to the controller. This is currently handled in the devise/new controller/view. Set your plan name/s in the app/controller/application_controller.rb to direct the user to subscription or not based on whether the plan is free.
 
-# Using Cloudflare and Heroku for free SSL
+## Using Cloudflare and Heroku for free SSL
 See the link here to learn how to setup SSL on your site for free:
 https://support.cloudflare.com/hc/en-us/articles/205893698-Configure-CloudFlare-and-Heroku-over-HTTPS
 
 
-## License
+# License
 
 This starter project simply combines existing technologies such as Twitter Bootstrap, Ruby on Rails, Devise & OmniAuth gems, Stripe, and more.
 
