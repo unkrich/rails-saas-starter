@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Bootstrap for design
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'simple_form'
+gem 'hirb'                          # Better DB output in IRB
 # Gems for handling authentication
 gem 'therubyracer'
 gem 'devise'
@@ -45,6 +47,11 @@ gem 'stripe_event'
 
 # Fix jquery problems with turbolinks
 gem 'jquery-turbolinks'
+
+# Multitenant support
+gem 'apartment'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

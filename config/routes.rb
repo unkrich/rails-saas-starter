@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resource :subscription
   resource :card
+
+  get 'about' => 'pages#about'
   
 end

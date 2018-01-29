@@ -2,7 +2,7 @@
 
 # Synopsis
 
-This project exists because the pre-existing solutions such as rails-stripe-membership-saas and more for building a SaaS application simply didn't fit my needs.
+This project exists because the pre-existing solutions such as rails-stripe-membership-saas and more for building a SaaS application simply didn't fit my needs. While those projects are fantastic and may cover a wider range of functionalities, I found myself fighting with the code rather than building and understanding it.
 
 I tried to keep this project as simple, straightforward, and barebones as possible so that anyone who would like to use the code as a starting point for their projects would have very little code to confuse them and/or modify to their needs.
 
@@ -27,25 +27,26 @@ After cloning the repository to your computer start by running 'bundle install' 
 Devise should work on its own out of the box, but if you would like to use social sign-ups you are going to have to set the environment variables and create apps within the developer sections of Facebook and Google.
 
 First create your applications with Google and Facebook. Links provided below.
-https://developers.facebook.com/apps/
-https://console.developers.google.com/ (Make sure to use/activate Google Contacts and Google Plus)
+- https://developers.facebook.com/apps/
+- https://console.developers.google.com/ (Make sure to use/activate Google Contacts and Google Plus)
 
 After creating your applications with the above, set the environment variables to your API keys either remotely or locally.
 
 To do so locally:
+
 Run the below command in the shell:
-source ~/.bashrc
+- source ~/.bashrc
 
 Add these lines to the file:
-export GOOGLE_APP_ID="some_api_key"
-export GOOGLE_APP_SECRET="some_api_key"
-export FB_APP_ID="some_api_key"
-export FB_APP_SECRET="some_api_key"
+- export GOOGLE_APP_ID="some_api_key"
+- export GOOGLE_APP_SECRET="some_api_key"
+- export FB_APP_ID="some_api_key"
+- export FB_APP_SECRET="some_api_key"
 
 To do so in Heroku, simply run
 heroku set:config environment_variable=value
 where 'environment_variable' and 'value' correspond to the local lines.
-For more info, see : https://devcenter.heroku.com/articles/config-vars
+- For more info, see : https://devcenter.heroku.com/articles/config-vars
 
 Restart your terminal.
 
@@ -67,7 +68,7 @@ Make sure to create plans in the Stripe dashboard and note their id's as you are
 
 ## Using Cloudflare and Heroku for free SSL
 See the link here to learn how to setup SSL on your site for free:
-https://support.cloudflare.com/hc/en-us/articles/205893698-Configure-CloudFlare-and-Heroku-over-HTTPS
+- https://support.cloudflare.com/hc/en-us/articles/205893698-Configure-CloudFlare-and-Heroku-over-HTTPS
 
 
 # License
