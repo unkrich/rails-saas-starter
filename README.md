@@ -1,5 +1,7 @@
 # README
 
+Note: This project is out of date and should not be used as is.
+
 # Synopsis
 
 This project exists because the pre-existing solutions such as rails-stripe-membership-saas and more for building a SaaS application simply didn't fit my needs. While those projects are fantastic and may cover a wider range of functionalities, I found myself fighting with the code rather than building and understanding it.
